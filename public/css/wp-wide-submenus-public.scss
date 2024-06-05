@@ -1,0 +1,56 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+li.submenu-is-wide {
+	&:hover {
+		position: static;
+
+		>ul.sub-menu {
+			top: calc(100% + 5px);
+			/* not exactly sure where the 5px is coming from; don't have time to investigate; */
+			left: 0;
+			right: 0;
+			width: auto;
+			display: grid;
+		}
+	}
+
+	&.submenu-has-1-cols>ul.sub-menu {
+		grid-template-columns: 1fr;
+	}
+
+	&.submenu-has-2-cols>ul.sub-menu {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	&.submenu-has-3-cols>ul.sub-menu {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	&.submenu-has-4-cols>ul.sub-menu {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+
+	&.submenu-has-5-cols>ul.sub-menu {
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	}
+}
+
+/* Sample set up for Products submenu (menu-item-2105) with 2 cols and 8 menu items. */
+@for $i from 1 through 5 {
+	li.submenu-is-wide {
+		&.submenu-has-#{$i}-cols>ul.sub-menu {
+
+			@for $_i from 1 through 20 {
+				&.submenu-has-#{$_i}-children {
+					grid-column-start: 1;
+					grid-column-end: 1;
+					grid-row-start: #{$i};
+					grid-row-end: #{$i};
+				}
+			}
+		}
+	}
+}

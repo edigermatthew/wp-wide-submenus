@@ -1,0 +1,636 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+li.submenu-is-wide:hover {
+  position: static;
+}
+li.submenu-is-wide:hover > ul.sub-menu {
+  top: calc(100% + 5px);
+  /* not exactly sure where the 5px is coming from; don't have time to investigate; */
+  left: 0;
+  right: 0;
+  width: auto;
+  display: grid;
+}
+li.submenu-is-wide.submenu-has-1-cols > ul.sub-menu {
+  grid-template-columns: 1fr;
+}
+li.submenu-is-wide.submenu-has-2-cols > ul.sub-menu {
+  grid-template-columns: 1fr 1fr;
+}
+li.submenu-is-wide.submenu-has-3-cols > ul.sub-menu {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+li.submenu-is-wide.submenu-has-4-cols > ul.sub-menu {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+li.submenu-is-wide.submenu-has-5-cols > ul.sub-menu {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+/* Sample set up for Products submenu (menu-item-2105) with 2 cols and 8 menu items. */
+li.submenu-is-wide.submenu-has-1-cols > ul.sub-menu.submenu-has-1-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+li.submenu-is-wide.submenu-has-1-cols > ul.sub-menu.submenu-has-2-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+li.submenu-is-wide.submenu-has-1-cols > ul.sub-menu.submenu-has-3-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+li.submenu-is-wide.submenu-has-1-cols > ul.sub-menu.submenu-has-4-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+li.submenu-is-wide.submenu-has-1-cols > ul.sub-menu.submenu-has-5-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+li.submenu-is-wide.submenu-has-1-cols > ul.sub-menu.submenu-has-6-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+li.submenu-is-wide.submenu-has-1-cols > ul.sub-menu.submenu-has-7-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+li.submenu-is-wide.submenu-has-1-cols > ul.sub-menu.submenu-has-8-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+li.submenu-is-wide.submenu-has-1-cols > ul.sub-menu.submenu-has-9-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+li.submenu-is-wide.submenu-has-1-cols > ul.sub-menu.submenu-has-10-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+li.submenu-is-wide.submenu-has-1-cols > ul.sub-menu.submenu-has-11-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+li.submenu-is-wide.submenu-has-1-cols > ul.sub-menu.submenu-has-12-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+li.submenu-is-wide.submenu-has-1-cols > ul.sub-menu.submenu-has-13-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+li.submenu-is-wide.submenu-has-1-cols > ul.sub-menu.submenu-has-14-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+li.submenu-is-wide.submenu-has-1-cols > ul.sub-menu.submenu-has-15-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+li.submenu-is-wide.submenu-has-1-cols > ul.sub-menu.submenu-has-16-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+li.submenu-is-wide.submenu-has-1-cols > ul.sub-menu.submenu-has-17-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+li.submenu-is-wide.submenu-has-1-cols > ul.sub-menu.submenu-has-18-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+li.submenu-is-wide.submenu-has-1-cols > ul.sub-menu.submenu-has-19-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+li.submenu-is-wide.submenu-has-1-cols > ul.sub-menu.submenu-has-20-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+
+li.submenu-is-wide.submenu-has-2-cols > ul.sub-menu.submenu-has-1-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+li.submenu-is-wide.submenu-has-2-cols > ul.sub-menu.submenu-has-2-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+li.submenu-is-wide.submenu-has-2-cols > ul.sub-menu.submenu-has-3-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+li.submenu-is-wide.submenu-has-2-cols > ul.sub-menu.submenu-has-4-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+li.submenu-is-wide.submenu-has-2-cols > ul.sub-menu.submenu-has-5-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+li.submenu-is-wide.submenu-has-2-cols > ul.sub-menu.submenu-has-6-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+li.submenu-is-wide.submenu-has-2-cols > ul.sub-menu.submenu-has-7-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+li.submenu-is-wide.submenu-has-2-cols > ul.sub-menu.submenu-has-8-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+li.submenu-is-wide.submenu-has-2-cols > ul.sub-menu.submenu-has-9-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+li.submenu-is-wide.submenu-has-2-cols > ul.sub-menu.submenu-has-10-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+li.submenu-is-wide.submenu-has-2-cols > ul.sub-menu.submenu-has-11-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+li.submenu-is-wide.submenu-has-2-cols > ul.sub-menu.submenu-has-12-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+li.submenu-is-wide.submenu-has-2-cols > ul.sub-menu.submenu-has-13-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+li.submenu-is-wide.submenu-has-2-cols > ul.sub-menu.submenu-has-14-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+li.submenu-is-wide.submenu-has-2-cols > ul.sub-menu.submenu-has-15-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+li.submenu-is-wide.submenu-has-2-cols > ul.sub-menu.submenu-has-16-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+li.submenu-is-wide.submenu-has-2-cols > ul.sub-menu.submenu-has-17-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+li.submenu-is-wide.submenu-has-2-cols > ul.sub-menu.submenu-has-18-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+li.submenu-is-wide.submenu-has-2-cols > ul.sub-menu.submenu-has-19-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+li.submenu-is-wide.submenu-has-2-cols > ul.sub-menu.submenu-has-20-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+
+li.submenu-is-wide.submenu-has-3-cols > ul.sub-menu.submenu-has-1-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+li.submenu-is-wide.submenu-has-3-cols > ul.sub-menu.submenu-has-2-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+li.submenu-is-wide.submenu-has-3-cols > ul.sub-menu.submenu-has-3-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+li.submenu-is-wide.submenu-has-3-cols > ul.sub-menu.submenu-has-4-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+li.submenu-is-wide.submenu-has-3-cols > ul.sub-menu.submenu-has-5-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+li.submenu-is-wide.submenu-has-3-cols > ul.sub-menu.submenu-has-6-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+li.submenu-is-wide.submenu-has-3-cols > ul.sub-menu.submenu-has-7-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+li.submenu-is-wide.submenu-has-3-cols > ul.sub-menu.submenu-has-8-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+li.submenu-is-wide.submenu-has-3-cols > ul.sub-menu.submenu-has-9-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+li.submenu-is-wide.submenu-has-3-cols > ul.sub-menu.submenu-has-10-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+li.submenu-is-wide.submenu-has-3-cols > ul.sub-menu.submenu-has-11-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+li.submenu-is-wide.submenu-has-3-cols > ul.sub-menu.submenu-has-12-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+li.submenu-is-wide.submenu-has-3-cols > ul.sub-menu.submenu-has-13-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+li.submenu-is-wide.submenu-has-3-cols > ul.sub-menu.submenu-has-14-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+li.submenu-is-wide.submenu-has-3-cols > ul.sub-menu.submenu-has-15-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+li.submenu-is-wide.submenu-has-3-cols > ul.sub-menu.submenu-has-16-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+li.submenu-is-wide.submenu-has-3-cols > ul.sub-menu.submenu-has-17-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+li.submenu-is-wide.submenu-has-3-cols > ul.sub-menu.submenu-has-18-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+li.submenu-is-wide.submenu-has-3-cols > ul.sub-menu.submenu-has-19-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+li.submenu-is-wide.submenu-has-3-cols > ul.sub-menu.submenu-has-20-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+
+li.submenu-is-wide.submenu-has-4-cols > ul.sub-menu.submenu-has-1-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+li.submenu-is-wide.submenu-has-4-cols > ul.sub-menu.submenu-has-2-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+li.submenu-is-wide.submenu-has-4-cols > ul.sub-menu.submenu-has-3-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+li.submenu-is-wide.submenu-has-4-cols > ul.sub-menu.submenu-has-4-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+li.submenu-is-wide.submenu-has-4-cols > ul.sub-menu.submenu-has-5-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+li.submenu-is-wide.submenu-has-4-cols > ul.sub-menu.submenu-has-6-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+li.submenu-is-wide.submenu-has-4-cols > ul.sub-menu.submenu-has-7-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+li.submenu-is-wide.submenu-has-4-cols > ul.sub-menu.submenu-has-8-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+li.submenu-is-wide.submenu-has-4-cols > ul.sub-menu.submenu-has-9-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+li.submenu-is-wide.submenu-has-4-cols > ul.sub-menu.submenu-has-10-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+li.submenu-is-wide.submenu-has-4-cols > ul.sub-menu.submenu-has-11-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+li.submenu-is-wide.submenu-has-4-cols > ul.sub-menu.submenu-has-12-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+li.submenu-is-wide.submenu-has-4-cols > ul.sub-menu.submenu-has-13-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+li.submenu-is-wide.submenu-has-4-cols > ul.sub-menu.submenu-has-14-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+li.submenu-is-wide.submenu-has-4-cols > ul.sub-menu.submenu-has-15-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+li.submenu-is-wide.submenu-has-4-cols > ul.sub-menu.submenu-has-16-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+li.submenu-is-wide.submenu-has-4-cols > ul.sub-menu.submenu-has-17-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+li.submenu-is-wide.submenu-has-4-cols > ul.sub-menu.submenu-has-18-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+li.submenu-is-wide.submenu-has-4-cols > ul.sub-menu.submenu-has-19-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+li.submenu-is-wide.submenu-has-4-cols > ul.sub-menu.submenu-has-20-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+
+li.submenu-is-wide.submenu-has-5-cols > ul.sub-menu.submenu-has-1-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 5;
+  grid-row-end: 5;
+}
+li.submenu-is-wide.submenu-has-5-cols > ul.sub-menu.submenu-has-2-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 5;
+  grid-row-end: 5;
+}
+li.submenu-is-wide.submenu-has-5-cols > ul.sub-menu.submenu-has-3-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 5;
+  grid-row-end: 5;
+}
+li.submenu-is-wide.submenu-has-5-cols > ul.sub-menu.submenu-has-4-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 5;
+  grid-row-end: 5;
+}
+li.submenu-is-wide.submenu-has-5-cols > ul.sub-menu.submenu-has-5-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 5;
+  grid-row-end: 5;
+}
+li.submenu-is-wide.submenu-has-5-cols > ul.sub-menu.submenu-has-6-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 5;
+  grid-row-end: 5;
+}
+li.submenu-is-wide.submenu-has-5-cols > ul.sub-menu.submenu-has-7-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 5;
+  grid-row-end: 5;
+}
+li.submenu-is-wide.submenu-has-5-cols > ul.sub-menu.submenu-has-8-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 5;
+  grid-row-end: 5;
+}
+li.submenu-is-wide.submenu-has-5-cols > ul.sub-menu.submenu-has-9-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 5;
+  grid-row-end: 5;
+}
+li.submenu-is-wide.submenu-has-5-cols > ul.sub-menu.submenu-has-10-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 5;
+  grid-row-end: 5;
+}
+li.submenu-is-wide.submenu-has-5-cols > ul.sub-menu.submenu-has-11-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 5;
+  grid-row-end: 5;
+}
+li.submenu-is-wide.submenu-has-5-cols > ul.sub-menu.submenu-has-12-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 5;
+  grid-row-end: 5;
+}
+li.submenu-is-wide.submenu-has-5-cols > ul.sub-menu.submenu-has-13-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 5;
+  grid-row-end: 5;
+}
+li.submenu-is-wide.submenu-has-5-cols > ul.sub-menu.submenu-has-14-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 5;
+  grid-row-end: 5;
+}
+li.submenu-is-wide.submenu-has-5-cols > ul.sub-menu.submenu-has-15-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 5;
+  grid-row-end: 5;
+}
+li.submenu-is-wide.submenu-has-5-cols > ul.sub-menu.submenu-has-16-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 5;
+  grid-row-end: 5;
+}
+li.submenu-is-wide.submenu-has-5-cols > ul.sub-menu.submenu-has-17-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 5;
+  grid-row-end: 5;
+}
+li.submenu-is-wide.submenu-has-5-cols > ul.sub-menu.submenu-has-18-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 5;
+  grid-row-end: 5;
+}
+li.submenu-is-wide.submenu-has-5-cols > ul.sub-menu.submenu-has-19-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 5;
+  grid-row-end: 5;
+}
+li.submenu-is-wide.submenu-has-5-cols > ul.sub-menu.submenu-has-20-children {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 5;
+  grid-row-end: 5;
+}/*# sourceMappingURL=wp-wide-submenus-public.css.map */
