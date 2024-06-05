@@ -71,14 +71,14 @@ class WP_Wide_Submenus_Admin {
 	 * Save the nav menu items.
 	 * 
 	 * @since 0.0.2
-	 * @param int $menu_id The ID of the menu.
-	 * @param int $menu_item_db_id The menu item db ID.
-	 * @param array $menu_item_args The args for the menu item.
+	 * @param int 	$menu_id 		 The ID of the menu.
+	 * @param int 	$menu_item_db_id The menu item db ID.
+	 * @param array $menu_item_data  The args for the menu item.
 	 */
-	public function update_nav_menu_item( $menu_id, $menu_item_db_id, $menu_item_args ) {
+	public function update_nav_menu_item( $menu_id, $menu_item_db_id, $menu_item_data ) {
 		if ( is_array( $_POST['menu-item-submenu-columns-number'] ) ) {
-			$menu_item_args['menu-item-submenu-columns-number'] = $_POST['menu-item-submenu-columns-number'][$menu_item_db_id];
-			update_post_meta( $menu_item_db_id, '_menu_item_submenu_columns_number', sanitize_html_class( $menu_item_args['menu-item-submenu-columns-number'] ) );
+			$menu_item_data['menu-item-submenu-columns-number'] = $_POST['menu-item-submenu-columns-number'][$menu_item_db_id];
+			update_post_meta( $menu_item_db_id, '_menu_item_submenu_columns_number', sanitize_html_class( $menu_item_data['menu-item-submenu-columns-number'] ) );
 		}
 	}
 
@@ -88,11 +88,12 @@ class WP_Wide_Submenus_Admin {
 	 * Add the custom fields for the submenu columns number to the menu walker.
 	 * 
 	 * @since 0.0.2
-	 * @param string $item_id Menu item ID as a numeric string.
-	 * @param WP_Post $menu_item Menu item data object.
-	 * @param int $depth Depth of menu item. Used for padding.
-	 * @param stdClass|null $args An object of menu item arguments.
-	 * @param int $current_object_id Nav menu ID.
+	 * 
+	 * @param string 		$item_id 		   Menu item ID as a numeric string.
+	 * @param WP_Post 		$menu_item 		   Menu item data object.
+	 * @param int 			$depth 			   Depth of menu item. Used for padding.
+	 * @param stdClass|null $args			   An object of menu item arguments.
+	 * @param int 			$current_object_id Nav menu ID.
 	 */
 	public function add_custom_fields_to_walker( $item_id, $menu_item, $depth, $args, $current_object_id ) {
 		?>
@@ -102,5 +103,42 @@ class WP_Wide_Submenus_Admin {
 				<input type="number" name="menu-item-submenu-columns-number[<?php echo $item_id; ?>]" id="edit-menu-item-submenu-columns-number-<?php echo $item_id; ?>" value="<?php echo esc_attr( $menu_item->submenu_columns_number ); ?>">
 			</label>
 		<?php
+	}
+
+	/**
+	 * Update the wp_wide_submenus_menus option.
+	 * 
+	 * Update the database option.
+	 * 
+	 * @since 0.0.6 Renamed.
+	 * @since 0.0.5
+	 * 
+	 * @param int   $menu_id    The menu ID.
+	 * @param array $menu_data Array of menu data.
+	 */
+	public function update_wp_wide_submenus_menus_option( $menu_id, $menu_data = array() ) {
+		$locations = get_nav_menu_locations();
+
+		if ( ! empty( $locations ) ) {
+			
+			$found = false;
+			$args  = array();
+			
+			foreach ( $locations as $location => $location_id ) {
+				if ( $menu_id === wp_get_nav_menu_object( $location_id )->term_id ) {
+					$found = true;
+					break;
+				}
+			}
+
+			if ( $found ) {
+				$args[ $location ] = array(
+					'id' 	   => $menu_id,
+					'location' => $location
+				);
+
+				update_option( 'wp_wide_submenus_menus', array_merge( get_option( 'wp_wide_submenus_menus', array(), $args ) ) );
+			}
+		}
 	}
 }

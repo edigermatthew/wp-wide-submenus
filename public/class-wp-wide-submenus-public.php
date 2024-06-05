@@ -94,20 +94,21 @@ class WP_Wide_Submenus_Public {
 	 * 
 	 * Add the column number to the nav menu class.
 	 * 
-	 * @since 0.0.4 Changing columns to cols.
-	 * @since 0.0.3 Cast menu_item_parent as integer.
-	 * @since 0.0.2
-	 * @param string[] $classes Array of the CSS classes that are applied to the menu item's `<li>` element.
-	 * @param WP_Post $menu_item The current menu item object.
-	 * @param stdClass $args An object of wp_nav_menu() arguments.
-	 * @param int $depth Depth of menu item. Used for padding.
-	 * @return string[] $classes Array of the classes;
+	 * @since  0.0.4 	Changing columns to cols.
+	 * @since  0.0.3 	Cast menu_item_parent as integer.
+	 * @since  0.0.2
+	 * @param  string[] $classes   Array of the CSS classes that are applied to the menu item's `<li>` element.
+	 * @param  WP_Post  $menu_item The current menu item object.
+	 * @param  stdClass $args 	   An object of wp_nav_menu() arguments.
+	 * @param  int 		$depth 	   Depth of menu item. Used for padding.
+	 * @return string[] Array of the classes;
 	 */
 	public function add_submenu_columns_number_to_nav_menu_css_class( $classes, $menu_item, $args, $depth ) {
 		$submenu_columns_number = $menu_item->submenu_columns_number;
 	
 		if ( ! empty( $submenu_columns_number ) ) {
 			$classes[] = 'submenu-is-wide';
+			/*
 			$classes[] = 'submenu-has-' . $submenu_columns_number . '-cols';
 			
 			// Check for children items.
@@ -121,9 +122,59 @@ class WP_Wide_Submenus_Public {
 				}
 				$classes[] = 'submenu-has-' . $children . '-children';
 			}
+			*/
 		}
 	
 		return $classes;
+	}
+
+	/**
+	 * Modify nav menu args.
+	 * 
+	 * Modify the navigation menu args.
+	 * 
+	 * @since  0.0.6
+	 * @param  array $args wp_nav_menu arguments.
+	 * @return array The arguments.
+	 */
+	public function modify_nav_menu_args( $args ) {
+		$location = $args['theme_location'];
+
+		if ( empty( $location ) ) {
+			return $args;
+		}
+
+		$menu_id =
+
+
+		$menu_items 	 = wp_get_nav_menu_items( $args['menu'] );
+		$needs_wide_menu = false;
+		
+
+		if ( ! empty( $menu_items ) ) {
+			foreach ( $menu_items as $menu_item ) {
+				$cols_number = (int) $menu_item->submenu_columns_number;
+var_dump( $cols_number );
+				if ( ! empty( $cols_number ) && $cols_number > 0 ) {
+					$needs_wide_menu = true;
+				}
+			}
+		}
+
+		if ( $needs_wide_menu ) {
+			$defaults = array(
+				'before' 	  => '',
+				'after'  	  => '',
+				'link_before' => '',
+				'link_after'  => '',
+				'walker'	  => new WP_Wide_Submenus_Walker()
+			);
+
+			// Merge the args.
+			$args = array_merge( $args, apply_filters( 'wp_wide_submenus_nav_menu_args', $defaults, $args ) );
+		}
+
+		return $args;
 	}
 
 	/**
@@ -131,12 +182,12 @@ class WP_Wide_Submenus_Public {
 	 * 
 	 * Filter the output of the menu item.
 	 * 
-	 * @since 0.0.5
-	 * @param string $item_output The menu item's starting HTML output.
-	 * @param WP_Post $menu_item Menu item data object.
-	 * @param int $depth Depth of menu item. Used for padding.
-	 * @param stdClass $args An object of wp_nav_menu() arguments.
-	 * @return string The item output.
+	 * @since  0.0.5
+	 * @param  string 	$item_output The menu item's starting HTML output.
+	 * @param  WP_Post 	$menu_item   Menu item data object.
+	 * @param  int 		$depth 		 Depth of menu item. Used for padding.
+	 * @param  stdClass $args 		 An object of wp_nav_menu() arguments.
+	 * @return string 	The item output.
 	 */
 	public function filter_nav_item_output( $item_output, $menu_item, $depth, $args ) {
 

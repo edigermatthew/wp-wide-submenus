@@ -117,6 +117,11 @@ class WP_Wide_Submenus {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wp-wide-submenus-public.php';
 
+		/**
+		 * The class responsible for the menu walker.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wp-wide-submenus-walker.php';
+
 		$this->loader = new WP_Wide_Submenus_Loader();
 	}
 
@@ -139,7 +144,8 @@ class WP_Wide_Submenus {
 	 * Register all of the hooks related to the admin area functionality
 	 * of the plugin.
 	 *
-	 * @since 0.0.1
+	 * @since  0.0.5 Adding wp_update_nav_menu hook.
+	 * @since  0.0.1
 	 * @access private
 	 */
 	private function define_admin_hooks() {
@@ -149,6 +155,7 @@ class WP_Wide_Submenus {
 		$this->loader->add_filter( 'wp_setup_nav_menu_item', $plugin_admin, 'add_nav_menu_item_property' );
 		$this->loader->add_action( 'wp_update_nav_menu_item', $plugin_admin, 'update_nav_menu_item', 10, 3 );
 		$this->loader->add_action( 'wp_nav_menu_item_custom_fields', $plugin_admin, 'add_custom_fields_to_walker', 10, 5 );
+		$this->loader->add_action( 'wp_update_nav_menu', $plugin_admin, 'update_nav_menu', 10, 2 );
 	}
 
 	/**
@@ -166,8 +173,8 @@ class WP_Wide_Submenus {
 
 		// Public menu item hooks.
 		$this->loader->add_filter( 'nav_menu_css_class', $plugin_public, 'add_submenu_columns_number_to_nav_menu_css_class', 10, 4 );
-
-		$this->loader->add_filter( 'walker_nav_menu_start_el', $plugin_public, 'filter_nav_item_output', 10, 4 );
+		$this->loader->add_filter( 'wp_nav_menu_args', $plugin_public, 'modify_nav_menu_args', 0 );
+		//$this->loader->add_filter( 'walker_nav_menu_start_el', $plugin_public, 'filter_nav_item_output', 10, 4 );
 	}
 
 	/**

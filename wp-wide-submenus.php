@@ -1,5 +1,16 @@
 <?php
 /**
+ * Plugin Name: WP Wide Submenus
+ * Plugin URI:  https://mediaworksweb.com
+ * Description: Make your submenus wide! Extends menus by adding columns.
+ * Version: 	0.0.4
+ * Author: 		Matt
+ * Author URI:  https://mediaworksweb.com/
+ * License: 	GPL-2.0+
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+ * Text Domain: wp-wide-submenus
+ * Domain Path: /languages
+ * 
  * The plugin bootstrap file
  *
  * This file is read by WordPress to generate the plugin information in the plugin
@@ -10,18 +21,7 @@
  * @link https://mediaworksweb.com
  * @since 0.0.1
  * @package WP_Wide_Submenus
- *
  * @wordpress-plugin
- * Plugin Name: WP Wide Submenus
- * Plugin URI: https://mediaworksweb.com
- * Description: Make your submenus wide! Extends menus by adding columns.
- * Version: 0.0.4
- * Author: Matt
- * Author URI: https://mediaworksweb.com/
- * License: GPL-2.0+
- * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain: wp-wide-submenus
- * Domain Path: /languages
  */
 
 // If this file is called directly, abort.
